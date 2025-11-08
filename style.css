@@ -1,0 +1,96 @@
+/* static/css/style.css */
+body {
+    padding-bottom: 6rem;
+}
+
+.header-title {
+    margin-bottom: 0;
+}
+
+.pantry-title {
+    margin-bottom: 0.5rem;
+}
+
+.pantry-container {
+    padding: 0.5rem;
+    border: 1px dashed var(--muted-border-color);
+    border-radius: var(--border-radius);
+    min-height: 80px;
+    margin-bottom: 1rem;
+}
+
+/* Individual ingredient tag */
+.pantry-tag {
+    background-color: var(--primary);
+    color: var(--primary-inverse);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pantry-tag-remove {
+    background: none;
+    border: none;
+    color: var(--primary-inverse);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Recipe Card Styling */
+.recipe-card {
+    margin-bottom: 1rem;
+}
+.recipe-card article {
+    margin: 0;
+}
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+.recipe-card footer {
+    padding: 0 1rem 1rem;
+}
+
+/* static/css/style.css */
+
+/* ... (all your existing styles) ... */
+
+
+/* --- RECIPE GRID LAYOUT --- */
+
+/* This targets the container for our recipe cards */
+#recipe-results-grid {
+    /* Tell the browser to use modern CSS Grid */
+    display: grid;
+    
+    /* * This is the magic line!
+     * It creates responsive columns. It means:
+     * - Try to fit as many 300px-wide columns as you can.
+     * - Let them grow to fill any extra space (1fr).
+     * - If a new 300px column can't fit, wrap it to the next row.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    /* Add some nice spacing between the cards */
+    gap: 1.5rem; 
+}
+
+/* * The .recipe-card class is no longer needed 
+ * since we're using the <article> tag directly.
+ * We can remove its styles.
+*/
+
+/* Override Pico's default margin for articles inside our grid */
+#recipe-results-grid > article {
+    margin: 0; 
+}
