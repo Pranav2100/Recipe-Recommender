@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's for Dinner?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header class="container">
+            <h1 class="header-title">What's for Dinner? 🍳</h1>
+            <p>Enter the ingredients you have, and we'll find recipes!</p>
+        </header>
+
+        <article>
+            <h4 class="pantry-title">My Pantry</h4>
+            <div id="pantry-tags" class="grid pantry-container">
+                </div>
+
+            <form id="add-ingredient-form" class="grid">
+                <input type="text" id="ingredient-input" placeholder="e.g., chicken, onion, garlic..." required>
+                <button type="submit" id="add-ingredient-btn">Add</button>
+            </form>
+        </article>
+
+        <button id="find-recipes-btn" class="contrast">Find Recipes</button>
+        <button id="view-favorites-btn" class="secondary">View My Favorites</button>
+
+        <section id="results-section">
+            <h3 id="results-title" style="display: none;">Your Recipe Ideas</h3>
+            <div id="loading-spinner" style="display: none;">
+                <progress></progress>
+                <small>Finding the perfect recipes...</small>
+            </div>
+            <div id="recipe-results-grid" class="grid">
+                </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
