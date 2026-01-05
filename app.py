@@ -4,6 +4,16 @@ from recipe_api import RecipeAPI
 from db_handler import DatabaseHandler # <-- 1. IMPORT DatabaseHandler
 import logging
 
+import os
+from pymongo import MongoClient
+
+MONGO_URI = os.environ.get("MONGO_URI")
+
+client = MongoClient(MONGO_URI)
+db = client["recipe_db"]
+recipes_collection = db["recipes"]
+
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
